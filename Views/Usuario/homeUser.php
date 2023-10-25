@@ -1,11 +1,11 @@
 <!-- Dependences -->
 <?php
-    // Enlazamos las dependencias necesario
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadUsuario.php"); 
-    require_once ("../../Controllers/mostrarInfoUser.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");
+// Enlazamos las dependencias necesario
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadUsuario.php");
+require_once("../../Controllers/mostrarInfoUser.php");
+require_once("../../Controllers/mostrarInfoAdmin.php");
 ?>
 
 
@@ -38,6 +38,7 @@
 
   <!-- Template Main CSS File -->
   <link href="../client-site/assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- =======================================================
   * Template Name: Restaurantly
@@ -65,17 +66,17 @@
           <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
+      </nav>
 
-        <div class="spa"><img id="carrito" src="../client-site/assets/img/carrito.png" alt="" style="height: 50px; width: 50px;"><span>0</span></div>
-        
-        <?php 
-            dropdownUser();
-        ?>
+      <div class="spa"><img id="carrito" src="../client-site/assets/img/carrito.png" alt="" style="height: 50px; width: 50px;"><span>0</span></div>
+
+      <?php
+      dropdownUser();
+      ?>
       <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav> 
-    
-         
+      </nav>
+
+
     </div>
 
   </header><!-- End Header -->
@@ -83,7 +84,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
-  
+
 
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
       <div class="row">
@@ -95,24 +96,24 @@
             <a href="#menu1" class="btn-book animated fadeInUp scrollto">Ver menu</a>
           </div>
         </div>
-      
+
 
       </div>
     </div>
 
     <div class="cart" id="cart_cont">
       <div class="row">
-          <?php
+        <?php
 
-          ?>
-      </div> 
+        ?>
+      </div>
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= About Section ======= -->
-   <section id="about" class="about">
+    <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -124,7 +125,7 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3 class="sobre">Sobre Nosotros</h3> <br>
             <p class="fst-italic">
-              Bienvenido a Salchipapería DC, el lugar donde encontrarás la comida rápida más deliciosas de Bogotá. Somos una empresa apasionada con mas de 10 años de experiencia para a brindarle a nuestros clientes una aventura  culinaria única y sabrosa. <br>
+              Bienvenido a Salchipapería DC, el lugar donde encontrarás la comida rápida más deliciosas de Bogotá. Somos una empresa apasionada con mas de 10 años de experiencia para a brindarle a nuestros clientes una aventura culinaria única y sabrosa. <br>
               Nuestro objetivo es ofrecerte un platillo clásico y amado por todos, las salchipapas, pero con nuestro toque especial. Utilizamos ingredientes frescos y de alta calidad para asegurar que cada porción sea una explosión de sabores y texturas. Nuestra dedicación a la excelencia culinaria nos ha convertido en un referente en la ciudad cuando se trata de disfrutar de una deliciosa comida rápida.
             </p>
           </div>
@@ -135,32 +136,32 @@
 
 
     <!-- ======= Menu Section ======= -->
-     
-   
-      <div class="container">
+
+
+    <div class="container">
       <section id="menu" class="menu">
-      <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2></h2>
-          <p>Menú</p>
-        </div>
-        <div class="container">
-          <div class="row">
-
-          <?php
-            cargarMenufront();
-           ?>
-            
+          <div class="section-title">
+            <h2></h2>
+            <p>Menú</p>
           </div>
+          <div class="container">
+            <div class="row">
+
+              <?php
+              cargarMenufront();
+              ?>
+
             </div>
-            
-            
           </div>
-        
-        </section>
-      </div>
-   
+
+
+        </div>
+
+      </section>
+    </div>
+
 
     <!-- ======= Specials Section ======= -->
     <section id="specials" class="specials">
@@ -222,7 +223,7 @@
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Perro Bechamel</h3>
                     <p class="fst-italic">El "Perro Bechamel" es mucho más que un simple hot dog; es una experiencia gastronómica que te sorprenderá desde el primer bocado.
-                      Una deliciosa fusión de ingredientes que combina la tradición de un hot dog con la elegancia de la bechamel.  </p>
+                      Una deliciosa fusión de ingredientes que combina la tradición de un hot dog con la elegancia de la bechamel. </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="../client-site/assets/img/perro.png" alt="" class="img-fluid">
@@ -261,7 +262,7 @@
     </section><!-- End Specials Section -->
 
     <!-- ======= Events Section ======= -->
-     <!-- ======= Events Section ======= -->
+    <!-- ======= Events Section ======= -->
     <section id="events" class="events">
       <div class="container" data-aos="fade-up">
 
@@ -327,7 +328,7 @@
                     <p><span>Visítanos</span></p>
                   </div>
                   <p class="fst-italic">
-                    En el vibrante barrio de Kennedy, nuestra sede te espera con los sabores más irresistibles de las salchipapas. Nuestro espacio moderno y cómodo es ideal para relajarte y deleitarte con nuestras especialidades. ¡No dudes en visitarnos  y descubre por qué somos el favorito de la comunidad local!
+                    En el vibrante barrio de Kennedy, nuestra sede te espera con los sabores más irresistibles de las salchipapas. Nuestro espacio moderno y cómodo es ideal para relajarte y deleitarte con nuestras especialidades. ¡No dudes en visitarnos y descubre por qué somos el favorito de la comunidad local!
                   </p> <br>
                   <ul>
                     <li><i class="bi bi-check-circled"></i>Dirección: Cra 78B #38-C70</li>
@@ -367,7 +368,7 @@
       </div>
     </section><!-- End Events Section -->
 
-    
+
 
 
     <!-- ======= Gallery Section ======= -->
@@ -453,7 +454,7 @@
       </div>
     </section><!-- End Gallery Section -->
 
-   
+
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -462,7 +463,7 @@
         <div class="section-title">
           <h2>Contacto</h2>
           <p>Contactanos</p>
-        </div>  
+        </div>
       </div>
 
       <div data-aos="fade-up">
@@ -542,7 +543,7 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    
+
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
@@ -559,6 +560,26 @@
   <!-- Template Main JS File -->
   <script src="../client-site/assets/js/main.js"></script>
   <script src="../client-site/assets/js/carrito.js"></script>
+
+  <script>
+    // Obtén el elemento del modal una vez y guárdalo en una variable
+    const modalBox = document.getElementById("modalBox");
+    const overlay = document.getElementById("overlay1");
+
+
+    function showModal() {
+      // Usa la variable modalBox en lugar de buscar el elemento nuevamente
+      modalBox.style.opacity = "1";
+      overlay.style.opacity = "1";
+    }
+
+    function closeModal() {
+      // Usa la variable modalBox en lugar de buscar el elemento nuevamente
+      modalBox.style.opacity = "0";
+      overlay.style.opacity = "0";
+    }
+  </script>
+
 
 </body>
 

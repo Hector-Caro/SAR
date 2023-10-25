@@ -1,55 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-body {
-
-    background: linear-gradient(45deg, #eb9119, #fdc623, #F86F03, #CD2222);
-    background-size: 400% 400%;
-    animation: animate 10s ease infinite;
-    position: relative;
-}
-
-@keyframes animate {
-    0% {
-        background-position: 0 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0 50%;
-    }
+.cardP{
+    padding: 60px;
 }
 
 
+.modal button.show-modal,
+.modal-box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
 
-.contP {
+.modal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 380px;
+    width: 100%;
+    opacity: 0;
+    padding: 30px 20px;
+    border-radius: 24px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    z-index: 10000;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+
+.modal-box h2 {
     margin-top: 20px;
-    background: #ffffff;
-    padding: 50px;
-    border-radius: 20px;
-    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #333;
 }
 
-.datos {
-    padding: 50px;
+.modal-box h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
 }
 
-.titulo2 {
-    margin-top: 30px;
+.modal-box .buttons {
+    margin-top: 25px;
 }
 
-.nav-pills .nav-link.active,
-.nav-pills .nav-link.active:hover,
-.nav-pills .nav-link.active:focus {
-    background-color: #fdc623 !important;
-    color: #000 !important;
+
+.modal-box button {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin: 0 10px;
+}
+
+.close-btn{
+    cursor: pointer;
+}
+
+
+/* dasdd */
+
+
+.modal2{
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin-left: 70px;
+    width: 27%;
+    transition: .6s;
+    box-shadow:  0px 1px 10px rgb(247, 139, 50);
+}
+
+.modal2 .imng{
+    padding: 30px;
+    height: 78%;
+}
+.modal2 .imng img{
+    width: 50%;
+    border-radius: 5px;
+}
+
+.modal2 .imng h2{
+    padding: 20px 0;
+}
+
+.modal2 .imng span{
+    color: white;
+    font-weight: 600;
+}
+
+.botones{
+    padding: 20px;
+}
+
+.botones button{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    padding: 14px 22px;
+    border: none;
+    background: #000;
+    border: 2px solid #000;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.botones button:hover{
+    background: #000;
+    border: 2px solid #eb901971;
+    transition: .5s;
+}
+
+.show-modal1{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.botones button .botonver{
+    width: 50px;
+    height: 50px;
+    
 }

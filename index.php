@@ -1,9 +1,9 @@
 <?php
-  // Enlazamos las dependencias necesario
-  require_once ("Models/conexion.php");
-  require_once ("Models/consultas.php");
-  require_once ("Controllers/mostrarInfoAdmin.php");   
-   
+// Enlazamos las dependencias necesario
+require_once("Models/conexion.php");
+require_once("Models/consultas.php");
+require_once("Controllers/mostrarInfoAdmin.php");
+
 ?>
 
 
@@ -23,9 +23,7 @@
   <link href="Views/client-site/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="Views/client-site/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -38,6 +36,9 @@
 
   <!-- Template Main CSS File -->
   <link href="Views/client-site/assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="Views/Usuario/css/style.css">
+
 
   <!-- =======================================================
   * Template Name: Restaurantly
@@ -55,8 +56,7 @@
   <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.php"><img src="Views/client-site/assets/img/sar.png"
-            alt="logo"></a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="index.php"><img src="Views/client-site/assets/img/sar.png" alt="logo"></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -136,16 +136,16 @@
         <div class="container">
           <div class="row">
 
-           <?php
-                cargarMenufront2();
-           ?>
-            
+            <?php
+            cargarMenufront2();
+            ?>
+
           </div>
-            </div>
-            
-            
-          </div>
-        
+        </div>
+
+
+      </div>
+
     </section>
 
     <!-- ======= Specials Section ======= -->
@@ -202,8 +202,7 @@
                       costa.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Views/client-site/assets/img/salchi1.png" alt="" class="img-fluid"
-                      style="position: relative;top: -150px;">
+                    <img src="Views/client-site/assets/img/salchi1.png" alt="" class="img-fluid" style="position: relative;top: -150px;">
                   </div>
                 </div>
               </div>
@@ -231,8 +230,7 @@
                     </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="Views/client-site/assets/img/alitas.png" alt="" class="img-fluid"
-                      style="position: relative; top: -120px;">
+                    <img src="Views/client-site/assets/img/alitas.png" alt="" class="img-fluid" style="position: relative; top: -120px;">
                   </div>
                 </div>
               </div>
@@ -401,8 +399,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="Views/client-site/assets/img/kenedy.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="Views/client-site/assets/img/kenedy.jpg" alt="" class="img-fluid"
-                  style="height: 350px; width: 100%;">
+                <img src="Views/client-site/assets/img/kenedy.jpg" alt="" class="img-fluid" style="height: 350px; width: 100%;">
               </a>
             </div>
           </div>
@@ -410,8 +407,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="Views/client-site/assets/img/modelia.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="Views/client-site/assets/img/modelia.jpg" alt="" class="img-fluid"
-                  style="height: 350px; width: 100%;">
+                <img src="Views/client-site/assets/img/modelia.jpg" alt="" class="img-fluid" style="height: 350px; width: 100%;">
               </a>
             </div>
           </div>
@@ -427,8 +423,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="Views/client-site/assets/img/galeria5.jpeg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="Views/client-site/assets/img/galeria5.jpeg" alt="" class="img-fluid"
-                  style="height: 350px; width: 100%;">
+                <img src="Views/client-site/assets/img/galeria5.jpeg" alt="" class="img-fluid" style="height: 350px; width: 100%;">
               </a>
             </div>
           </div>
@@ -436,8 +431,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="Views/client-site/assets/img/galeria6.png" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="Views/client-site/assets/img/galeria6.png" alt="" class="img-fluid"
-                  style="height: 350px; width: 100%;">
+                <img src="Views/client-site/assets/img/galeria6.png" alt="" class="img-fluid" style="height: 350px; width: 100%;">
               </a>
             </div>
           </div>
@@ -445,8 +439,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="Views/client-site/assets/img/galeria7.jpeg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="Views/client-site/assets/img/galeria7.jpeg" alt="" class="img-fluid"
-                  style="height: 350px; width: 100%;">
+                <img src="Views/client-site/assets/img/galeria7.jpeg" alt="" class="img-fluid" style="height: 350px; width: 100%;">
               </a>
             </div>
           </div>
@@ -454,8 +447,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="Views/client-site/assets/img/galeria8.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="Views/client-site/assets/img/galeria8.jpg" alt="" class="img-fluid"
-                  style="height: 350px; width: 100%;">
+                <img src="Views/client-site/assets/img/galeria8.jpg" alt="" class="img-fluid" style="height: 350px; width: 100%;">
               </a>
             </div>
           </div>
@@ -478,10 +470,7 @@
       </div>
 
       <div data-aos="fade-up">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15906.707459261324!2d-74.0594254!3d4.651597!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b595fbfe621%3A0x347633699eef1147!2sLa%20Salchipaperia%20DC%20Chapinero!5e0!3m2!1ses!2sco!4v1692025970409!5m2!1ses!2sco"
-          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15906.707459261324!2d-74.0594254!3d4.651597!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b595fbfe621%3A0x347633699eef1147!2sLa%20Salchipaperia%20DC%20Chapinero!5e0!3m2!1ses!2sco!4v1692025970409!5m2!1ses!2sco" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <div class="container" data-aos="fade-up">
@@ -536,8 +525,7 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="8"
-                  placeholder="Envia un mensaje que nos quieras compartir!" required></textarea>
+                <textarea class="form-control" name="message" rows="8" placeholder="Envia un mensaje que nos quieras compartir!" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -562,8 +550,7 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="Views/client-site/assets/vendor/aos/aos.js"></script>
@@ -575,6 +562,26 @@
 
   <!-- Template Main JS File -->
   <script src="Views/client-site/assets/js/main.js"></script>
+
+  <script>
+    // Obtén el elemento del modal una vez y guárdalo en una variable
+    const modalBox = document.getElementById("modalBox");
+    const overlay = document.getElementById("overlay1");
+
+
+    function showModal() {
+      // Usa la variable modalBox en lugar de buscar el elemento nuevamente
+      modalBox.style.opacity = "1";
+      overlay.style.opacity = "1";
+    }
+
+    function closeModal() {
+      // Usa la variable modalBox en lugar de buscar el elemento nuevamente
+      modalBox.style.opacity = "0";
+      overlay.style.opacity = "0";
+    }
+  </script>
+
 
 </body>
 

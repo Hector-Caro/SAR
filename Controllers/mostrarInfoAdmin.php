@@ -463,20 +463,24 @@
 
 
               echo '
-              <div class="col-md-4">
-                  <div class="cardM">
-                    <div class="hover">
-
-                    
-                      <img src="../'.$f['foto'].'" alt="foto plato" class="img-fluid">
-                      <p>'. $f['nombre'] .'</p>
-                      <p class="ingre">'.$f['ingredientes'].'</p>
-                      <p>'. $f['precio'] .'</p>
-                      <button class="botonM"><a href="personalizarPlato.php?id='.$f['id_menu'].'" class="botonA">Personalizar</a></button>
-                      <button class="botonM">Agregar</button>
+              <section class="col-md-4 modal2">
+              <div class="imng">
+                <img src="' . $f['foto'] . '" alt="">
+                <h2>' . $f['nombre'] . '</h2>
+                <span>' . $f['precio'] . '</span>
+              </div>
+              <div class="botones">
+                <button class="show-modal1" onclick="showModal()"><img src="Views/Usuario/img/ojo.png" alt="" class="botonver"></button>
+                <button class="show-modal"><img src="Views/Usuario/img/carrito-de-compras.png" alt="" class="botonver"></button>
+                <div class="modal-box" id="modalBox">
+                  <h2>Completed</h2>
+                  <h3>You have successfully downloaded all the source code files.</h3>
+                  <div class="buttons">
+                    <button class="close-btn" id="closeModal" onclick="closeModal()">Cerrar</button>
+                  </div>
                 </div>
-                </div>
-                </div>';
+              </div>
+            </section> ';
           }
       }
     }
@@ -501,20 +505,24 @@
 
 
               echo '
-              <div class="col-md-4">
-                  <div class="cardM">
-                    <div class="hover">
-
-                    
-                      <img src="'.$subcadena.'" alt="foto plato" class="img-fluid">
-                      <p>'. $f['nombre'] .'</p>
-                      <p class="ingre">'.$f['ingredientes'].'</p>
-                      <p>'. $f['precio'] .'</p>
-                      <button class="botonM"><a href="personalizarPlato.php?id='.$f['id_menu'].'" class="botonA">Personalizar</a></button>
-                      <button class="botonM">Agregar</button>
+              <section class="col-md-4 modal2">
+              <div class="imng">
+                <img src="' . $subcadena . '" alt="">
+                <h2>' . $f['nombre'] . '</h2>
+                <span>' . $f['precio'] . '</span>
+              </div>
+              <div class="botones">
+                <button class="show-modal1" onclick="showModal()"><img src="Views/Usuario/img/ojo.png" alt="" class="botonver"></button>
+                <button class="show-modal"><img src="Views/Usuario/img/carrito-de-compras.png" alt="" class="botonver"></button>
+                <div class="modal-box" id="modalBox">
+                  <h2>Completed</h2>
+                  <h3>You have successfully downloaded all the source code files.</h3>
+                  <div class="buttons">
+                    <button class="close-btn" id="closeModal" onclick="closeModal()">Cerrar</button>
+                  </div>
                 </div>
-                </div>
-                </div>';
+              </div>
+            </section> ';
           }
       }
     }
