@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Registro</title>
+    <link rel="shortcut icon" href="assets/img/sar.png">
+    <link rel="stylesheet" href="assets/css/login.css">
+
+</head>
+<body>
+    <main id="cont">
+        <div class="logo">
+            <a href="../../index.php">
+                <img src="assets/img/volver.png" alt="logo empresa">
+            </a>
+        </div>
+
+        <div class="todo">
+            <div class="caja">
+                <div class="caja-login">
+                    <h3>¿Ya tienes cuenta?</h3>
+                    <button id="inicio-s">Iniciar Sesión</button>    
+                </div>
+                
+                <div class="caja-reg">
+                    <h3>¿No tienes una cuenta?</h3>
+                    <button id="reg-s">Registrarse</button>    
+                </div>
+            </div>  
+            <div class="cont-log-reg">
+                        
+                        
+                <form action="../../Controllers/iniciarSesion.php" method="post" class="cont-log">
+                            
+                    <h1>Iniciar sesión</h1>
+                    <input type="email" placeholder="Ingrese su Correo" required="" name="email">       
+                    <input type="password" placeholder="Ingrese su contraseña" required="" name="clave">
+                    <button type="submit">Ingresar</button> 
+                    <a href="contraseña.html" class="contraseña">¿Olvidaste tu contraseña?</a>
+
+                </form>
+    
+                <form action="../../Controllers/registrarUserEx.php" method="post" class="cont-reg">
+                    <h1>Registrarse</h1>
+                            
+                    <input type="text" placeholder="Nombre" required="" name="nombres">
+                    <input type="text" placeholder="Apellidos" required="" name="apellidos">
+                    <input type="number" placeholder="Identificacion" required="" name="identificacion"> <br><br><br>
+                    <label for="">Tipo de documento
+                    <select name="tipo_doc" id="doc">
+                        <option>Tipo de Documento</option>
+                        <option value="CC">C.C</option>
+                        <option value="TI">T.I</option>
+                    </select>
+                             
+                    </label><br><br>
+                                                              
+                    <input type="email" placeholder="Correo electronico" required="" name="email">
+                    <input type="number" placeholder="Telefono" required="" name="telefono">
+                    <input type="password" placeholder="Ingrese su contraseña" required="" name="clave">
+                    <input type="password" placeholder="Confirme su contraseña" required="" name="clave2">
+                    <button type="submit">Registrar</button>
+                </form> 
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script src="assets/js/script.js"></script>
+
+    
+</body>
+</html>

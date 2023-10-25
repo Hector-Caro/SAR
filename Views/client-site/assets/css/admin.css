@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden !important; 
+    overflow-y: hidden !important; 
+}
+
+
+.logo{
+    background: black;
+}
+
+.sidebar .nano>.nano-content{
+    background: black;
+}
+
+.sidebar .nano-content>ul li>a{
+    background: black;
+}
+
+.sidebar .nano-content>ul>li.active>a, .sidebar .nano-content>ul>li.open>a, .sidebar .nano-content>ul>li>ul{
+    background: #eb9119;
+}
+
+.sidebar .nano-content>ul li.active>a::before{
+    background: #eb9119;
+}
+
+.btn-primary{
+    background: #eb9119;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-primary:active{
+    background: #eb9119;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover{
+    background: #fdc623;
+}
+
+.border-success {
+    border-color: #eb9119!important;
+}
+
+.color-success, .text-success{
+    color: #eb9119;
+}
+
+.color-primary, .text-primary {
+    color: #eb9119;
+}
+
+.border-primary {
+    border-color: #eb9119!important;
+}
+
+.border-pink {
+    border-color: #eb9119;
+}
+
+.color-pink, .text-pink {
+    color: #eb9119;
+}
+
+.color-danger, .text-danger {
+    color: #eb9119;
+}
+
+.border-danger {
+    border-color: #eb9119!important;
+}
+
+
+.stat-widget-one .stat-text {
+    font-size: 14px;
+    color:#a16017;
+}
+
+.stat-widget-one .stat-digit {
+    font-size: 24px;
+    color: #a16017;
+}
+
+.sidebar .nano-content>ul li>a:hover{
+    background: #eb9119;
+}
+
+
+.main .page-header .breadcrumb li.active{
+    color: #eb9119;
+}
+
+.adminInicio{
+    margin-top: 50px;
+}
+
+.adminInicio .linea hr{
+    color: #fdc623;
+    width: 99%;
+    height: 10px;
+    margin-top: -40px;
+}
+
+.adminInicio .adminTexto p{
+    font-size: 35px;
+    text-align: center;
+    margin-top: 130px;
+}
+
+.adminInicio .adminTexto p strong{
+    color: #eb9119;
+    font-size: 37px;
+}
+
+.adminInicio .adminImg{
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.adminInicio .adminImg img{
+    width: 90%;
+    margin-top: 50px;
+    margin-left: 46px;
+}
+
+.dt-buttons .dt-button:hover{
+    background-color: #eb9119;
+}
+input[type="file"]{
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+.foto12{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+}

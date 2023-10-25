@@ -1,0 +1,140 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.botones{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.botones button{
+  margin-right: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.dt-buttons .dt-button {
+  background-image: none;
+  background: #ffffff;
+  color: #373757;
+  border-color: #e7e7e7;
+  margin-right: 10px;
+  padding: 7px 20px;
+  border-radius: 0px;
+}
+
+p{
+  white-space: initial;
+}
+
+.volverA{
+  color: #697a8d;
+  transition: .5s;
+  margin-left: 15px;
+  padding: 5px;
+  margin-top: 15px;
+  width: 22%;
+}
+
+.volverA:hover{
+  color: #fff;
+  transition: .5s;
+  background: #697a8d;
+  border-radius: 5px;
+  width: 8%;
+}
+
+a{
+  color: #fff;
+}
+
+a:hover{
+  color: #fff;
+}
+
+.form-control:focus{
+  border-color: #fdc623 !important;
+  outline: 0 none;
+}
+
+.form-select:focus{
+  border-color: #fdc623 !important;
+}
+
+.btn-primary{
+  background: #fdc623;
+  color: #111;
+  font-size: .99rem;
+  border-color: #fdc623;
+  font-weight:normal ;
+}
+
+.btn-primary:hover{
+  background: #fdc623 !important;
+  color: #111 !important;
+  border-color: #fdc623 !important;
+}
+
+h2 {
+  color: #000;
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+h2 span {
+  color: #fdc623;
+  position: relative;
+}
+
+@keyframes blink {
+  50% { opacity: 0 }
+} 
+
+.foto1{
+  border-radius: 30px;
+  margin-top: -5px;
+}
+
+.fotoUser{
+  height: 100%;
+}
+
+#boxSearch{
+  width: 96%;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+  display: none;
+  transition: all 600ms;
+}
+
+#boxSearch ul{
+  padding: 10px;
+}
+
+#boxSearch ul li{
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+#boxSearch ul li a{
+  color: #697a8d;
+}
+
+#boxSearch ul li:hover{
+  background: whitesmoke;
+  transition: .5s;
+  border-radius: 5px;
+}

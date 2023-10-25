@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="assets/img/sar.png">
+    <title>Reestablecer Contraseña</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="image-box">
+                <img src="assets/img/password.svg" alt="">
+            </div>
+            <form action="../../Controllers/generarClave.php" method="post">
+                <img src="assets/img/sar.png" alt="">
+                <div class="topic">Reestablecer Contraseña</div>
+                <div class="text">Ingresa tu correo y número de identificación para reestablecer tu contraseña</div>
+                <div class="input-box">
+                    <input type="text" name="correo" required>
+                    <label>Correo electrónico</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="identificacion" required>
+                    <label>Numero de identificacion</label>
+                </div>
+                <div class="input-box">
+                    <input type="submit" value="Enviar">
+                </div>
+                <div class="Inicio">
+                    <p>Volver al <a href="login.html">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
