@@ -255,11 +255,10 @@ h6 {
   background: black;
   position: fixed;
   left: 1320px;
-  top: 120px;
+  top: 130px;
   height: 0;
   transition: 0.3s;
   z-index: 2;
-  overflow-y: scroll;
 }
 
 .cart >::-webkit-scrollbar-corner{

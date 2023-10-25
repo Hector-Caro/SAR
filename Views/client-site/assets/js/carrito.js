@@ -34,10 +34,10 @@ window.addEventListener('wheel', (e) => {
     scrollTop += e.deltaY;
 
     if (scrollTop <= 0) {
-        carti2.style.top = "120px";
+        carti2.style.top = "130px";
         scrollTop = 0;
     } else {
-        carti2.style.top = "80px";
+        carti2.style.top = "90px";
     }
 });
 

@@ -22,10 +22,6 @@ if (strlen($email)>0 && strlen($clave)>0) {
     $objValidar = new ValidarSesion();
     $result = $objValidar->iniciarSesion($email, $clave);
 
-    if (!$result){
-        echo ("Es falso");
-    }
-
 
 }else{
 
