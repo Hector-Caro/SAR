@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2023 a las 16:17:46
+-- Tiempo de generación: 25-10-2023 a las 14:17:52
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -123,6 +123,20 @@ CREATE TABLE `productos` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `proveedores`
+--
+
+CREATE TABLE `proveedores` (
+  `identificacion` int(11) NOT NULL,
+  `nombres` varchar(200) NOT NULL,
+  `telefono` int(11) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
+  `foto` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `recibo`
 --
 
@@ -198,7 +212,7 @@ INSERT INTO `users` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `emai
 (1234, 'CC', 'Michael', 'Camacho', 'michaelestivenc@gmail.com', 3212333, '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', ''),
 (12345789, 'CC', 'Empleado', 'Prueba', 'empleadoprueba@gmail.com', 12345789, '192c3425f0a3a4cca70e96149b5f3ff9', 'Empleado', 'Activo', '../Uploads/Usuarios/10.png'),
 (1014856785, 'CC', 'sds', 'ddd', 'wwwww@gmail.com', 3112035467, '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', ''),
-(1023242474, 'CC', 'sebastian', 'gamez', 'sebsgamez27@gmail.com', 3102488271, 'ad4714faaa8e85cc562eb8d4515299e0', 'Empleado', 'Activo', '../Uploads/Usuarios/sebas.png'),
+(1023242474, 'CC', 'sebastian', 'gamez', 'sebsgamez27@gmail.com', 3102488271, 'ad4714faaa8e85cc562eb8d4515299e0', 'Administrador', 'Activo', '../Uploads/Usuarios/sebas.png'),
 (1050602492, 'CC', 'Hector', 'Caro', 'hectorcaro722@gmail.com', 3224401981, 'b4e3f638689291b4570875abdef6b4b1', 'Administrador', 'Activo', '../Uploads/Usuarios/fotoHC.png');
 
 --
@@ -235,6 +249,12 @@ ALTER TABLE `pedidos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_pro`);
+
+--
+-- Indices de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  ADD PRIMARY KEY (`identificacion`);
 
 --
 -- Indices de la tabla `recibo`

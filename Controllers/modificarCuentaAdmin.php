@@ -27,13 +27,21 @@
 
 
         }else{
-            echo '<script>
-                alert("Por favor completar los campos vacíos.")
-            </script>';
-    
-             echo "<script>
-            location.href='../Views/Administrador/perfil.php'
-             </script>";
+
+            ?>
+            <script>
+                Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Por favor completar los campos vacíos.',
+        confirmButtonText: '<a href="../Views/Administrador/perfil.php" style="text-decoration: none; color:white;">Aceptar</a>',
+        })
+            </script>
+            <?php
+        
+        
         }
+        
+        
 
 ?>

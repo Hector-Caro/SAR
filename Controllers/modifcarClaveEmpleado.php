@@ -1,30 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../Views/Administrador/css/alerts.css">
+</head>
+<body>
 <?php
 
-    require_once ("../Models/conexion.php");
-    require_once ("../Models/consultas.php");
+require_once ("../Models/conexion.php");
+require_once ("../Models/consultas.php");
 
-    $identificacion = $_POST['identificacion'];
-    $clave = $_POST['clave'];
-    $clave2 = $_POST['clave2'];
+$identificacion = $_POST['identificacion'];
+$clave = $_POST['clave'];
+$clave2 = $_POST['clave2'];
 
-    if ($clave == $clave2) {
+if ($clave == $clave2) {
 
-        $claveMd = md5($clave);
+    $claveMd = md5($clave);
 
-        $objConsultas = new Consultas();
-        $result = $objConsultas->actualizarClaveEmpleado($identificacion, $claveMd);
+    $objConsultas = new Consultas();
+    $result = $objConsultas->actualizarClaveEmpleado($identificacion, $claveMd);
 
-    }else{
+}else{
 
-        echo '<script>
-            alert("Las claves no coinciden.")
-        </script>';
+    ?>
+    <script>
+        Swal.fire({
+icon: 'error',
+title: 'Oops...',
+text: 'Las claves no coinciden.',
+confirmButtonText: '<a href="../Views/Empleado/datosCuentaEmple.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+    </script>
+    <?php
 
-        echo "<script>
-            location.href='../Views/Empleado/datosCuentaEmple.php'
-        </script>";
-
-    }
+}
 
 
 ?>
+</body>
+</html>
+
+

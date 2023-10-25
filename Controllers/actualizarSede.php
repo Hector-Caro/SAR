@@ -1,4 +1,14 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../Views/Administrador/css/alerts.css">
+</head>
+<body>
+    <?php
 
     // Enlazamos las dependencias necesario
     require_once ("../Models/conexion.php");
@@ -30,13 +40,20 @@
 
 
         }else{
-            echo '<script>
-                alert("Por favor completar los campos vacíos.")
-            </script>';
-    
-             echo "<script>
-            location.href='../Views/Administrador/modificarSede.php?id=2'
-             </script>";
+            ?>
+            <script>
+                Swal.fire({
+      icon: 'question',
+      title: 'Oops...',
+      text: 'Por favor completar los campos vacíos.',
+      confirmButtonText: '<a href="../Views/Administrador/modificarSede.php" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+            </script>
+            <?php
         }
 
 ?>
+</body>
+</html>
+
+

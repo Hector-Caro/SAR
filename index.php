@@ -1,9 +1,9 @@
 <?php
-// Enlazamos las dependencias necesario
-require_once("Models/conexion.php");
-require_once("Models/consultas.php");
-require_once("Controllers/mostrarInfoAdmin.php");
-
+  // Enlazamos las dependencias necesario
+  require_once ("Models/conexion.php");
+  require_once ("Models/consultas.php");
+  require_once ("Controllers/mostrarInfoAdmin.php");   
+   
 ?>
 
 
@@ -38,8 +38,6 @@ require_once("Controllers/mostrarInfoAdmin.php");
 
   <!-- Template Main CSS File -->
   <link href="Views/client-site/assets/css/style.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="Views/Usuario/css/style.css">
 
   <!-- =======================================================
   * Template Name: Restaurantly
@@ -138,16 +136,16 @@ require_once("Controllers/mostrarInfoAdmin.php");
         <div class="container">
           <div class="row">
 
-            <?php
-            cargarMenufront2();
-            ?>
-
+           <?php
+                cargarMenufront2();
+           ?>
+            
           </div>
-        </div>
-
-
-      </div>
-
+            </div>
+            
+            
+          </div>
+        
     </section>
 
     <!-- ======= Specials Section ======= -->
@@ -577,26 +575,6 @@ require_once("Controllers/mostrarInfoAdmin.php");
 
   <!-- Template Main JS File -->
   <script src="Views/client-site/assets/js/main.js"></script>
-
-  <script>
-
-    // Obtén el elemento del modal una vez y guárdalo en una variable
-    const modalBox = document.getElementById("modalBox");
-    const overlay = document.getElementById("overlay1");
-
-
-    function showModal() {
-      // Usa la variable modalBox en lugar de buscar el elemento nuevamente
-      modalBox.style.opacity = "1";
-      overlay.style.opacity = "1";
-    }
-
-    function closeModal() {
-      // Usa la variable modalBox en lugar de buscar el elemento nuevamente
-      modalBox.style.opacity = "0";
-      overlay.style.opacity = "0";
-    }
-  </script>
 
 </body>
 

@@ -38,7 +38,6 @@
 
   <!-- Template Main CSS File -->
   <link href="../client-site/assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
 
   <!-- =======================================================
   * Template Name: Restaurantly
@@ -149,11 +148,9 @@
         <div class="container">
           <div class="row">
 
-            <?php
-              cargarMenufront();
-            ?>
-
-
+          <?php
+            cargarMenufront();
+           ?>
             
           </div>
             </div>
@@ -562,26 +559,6 @@
   <!-- Template Main JS File -->
   <script src="../client-site/assets/js/main.js"></script>
   <script src="../client-site/assets/js/carrito.js"></script>
-
-  <script>
-
-    // Obtén el elemento del modal una vez y guárdalo en una variable
-    const modalBox = document.getElementById("modalBox");
-    const overlay = document.getElementById("overlay1");
-
-
-    function showModal() {
-      // Usa la variable modalBox en lugar de buscar el elemento nuevamente
-      modalBox.style.opacity = "1";
-      overlay.style.opacity = "1";
-    }
-
-    function closeModal() {
-      // Usa la variable modalBox en lugar de buscar el elemento nuevamente
-      modalBox.style.opacity = "0";
-      overlay.style.opacity = "0";
-    }
-  </script>
 
 </body>
 

@@ -26,13 +26,13 @@ class GenerarRecibo
         U.email,
         U.identificacion,
         S.direccion_sede,
-        S.identificacion_admin,
+        S.identificacion,
         S.telefono_sede,
         MAX(R.id) as id
     FROM users as U  
     INNER JOIN recibo as R ON U.identificacion = R.encargado 
-    INNER JOIN sedes as S ON U.identificacion = S.identificacion_admin 
-    WHERE U.identificacion = S.identificacion_admin AND U.identificacion = :id";
+    INNER JOIN sedes as S ON U.identificacion = S.identificacion 
+    WHERE U.identificacion = S.identificacion AND U.identificacion = :id";
     
     
 

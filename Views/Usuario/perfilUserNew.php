@@ -4,7 +4,6 @@ require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
 require_once("../../Models/seguridadUsuario.php");
 require_once("../../Controllers/mostrarInfoUser.php");
-require_once ("../../Controllers/mostrarInfoAdmin.php");    
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,7 @@ require_once ("../../Controllers/mostrarInfoAdmin.php");
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="img/sar.png">
-
+    
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,59 +55,35 @@ require_once ("../../Controllers/mostrarInfoAdmin.php");
 
 <body>
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
+    <div class="container-fluid cardP">
+        <div class="row card-body contP ">
+            <h4 class="py-3 mb-4"><a class="text-muted fw-light" href="homeUser.php">Inicio/</a> Perfil</h4>
+            <div class="col-md-12">
+                <ul class="nav nav-pills flex-column flex-md-row mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href=""><i class="bx bxs-user-detail me-1"></i>
+                            Datos Personales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i
+                                class="bx bxs-bell-plus me-1"></i> Pedidos</a>
+                    </li>
+                </ul>
+                <div class="container-fliud">
+                    <h5 class="card-header titulo2">Datos Personales</h5>
 
-            <?php
-            include("menuIncru2.php");
-            ?>
-
-            <div class="layout-page">
-                <?php
-                include("menuIncru3.php");
-                ?>
-                <!-- Content wrapper -->
-                <div class="content-wrapper">
-                    <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="py-3 mb-4"><span class="text-muted fw-light"></span> Datos Personales</h4>
-
-                        <div class="row">
-                            <div class="card cardP">
-                                <?php
-                                    perfilEditarUser();
-                                ?>
-                            </div>
-                        </div>
-
+                    <!-- Account -->
+                    <div class="container datos">
+                        <?php
+                        perfilEditarUser();
+                        ?>
                     </div>
-                    <div class="content-backdrop fade"></div>
+                    <!-- /Account -->
                 </div>
+
             </div>
         </div>
-
-        <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

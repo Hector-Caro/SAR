@@ -33,6 +33,9 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 7px 20px;
   border-radius: 0px;
 }
+.swal2-styled{
+  padding: 0 !important;
+}
 
 p{
   white-space: initial;

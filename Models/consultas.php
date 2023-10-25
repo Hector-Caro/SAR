@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAR-Administrador</title>
+    <link rel="shortcut icon" href="../Views/client-site/assets/img/carrito.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../Views/Administrador/css/alerts.css">
+    
+</head>
+<body>
 <?php
 
 class Consultas
@@ -26,13 +38,16 @@ class Consultas
         if ($f) {
             // VALIDAMOS LA CONTRASEÑA
 
-            echo '<script>
-                            alert("El usuario ya está registrado ;)")
-                        </script>';
-
-            echo "<script>
-                            location.href='../Views/Administrador/registrarUsuario.php'
-                        </script>";
+            ?>
+            <script>
+                Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'El usuario ya esta registrado.',
+      confirmButtonText: '<a href="../Views/client-site/login.html" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+            </script>
+            <?php
         } else {
 
             $insertar = "INSERT INTO users(identificacion, tipo_doc, nombres, apellidos, email, telefono, clave, rol, estado, foto) VALUES (:identificacion, :tipo_doc, :nombres, :apellidos, :email, :telefono, :claveMd, :rol, :estado, :foto)";
@@ -51,13 +66,16 @@ class Consultas
             $result->bindParam(":foto", $foto);
             $result->execute();
 
-            echo '<script>
-                        alert("Registrado exitosamente..")
-                        </script>';
-
-            echo "<script>
-                            location.href='../Views/Administrador/verUsuarios.php'
-                        </script>";
+            ?>
+            <script>
+                Swal.fire({
+      icon: 'success',
+      title: 'Usuario registrado exitosamente',
+      text: '',
+      confirmButtonText: '<a href="../Views/Administrador/verUsuarios.php" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+            </script>
+            <?php
         }
 
     }
@@ -86,13 +104,16 @@ class Consultas
         if ($f) {
             // VALIDAMOS LA CONTRASEÑA
 
-            echo '<script>
-                            alert("El usuario ya está registrado ;)")
-                        </script>';
-
-            echo "<script>
-                            location.href='../Views/client-site/login.html'
-                        </script>";
+            ?>
+            <script>
+                Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'El usuario ya esta registrado.',
+      confirmButtonText: '<a href="../Views/client-site/login.html" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+            </script>
+            <?php
         } else {
 
 
@@ -118,13 +139,16 @@ class Consultas
             $result->execute();
             // EJECUTAMOS EL INSERT INTO
 
-            echo '<script>
-                    alert("Registrado exitosamente..")
-                    </script>';
-
-            echo "<script>
-                        location.href='../Views/client-site/login.html'
-                    </script>";
+            ?>
+        <script>
+            Swal.fire({
+  icon: 'success',
+  title: 'Usuario registrado.',
+  text: '',
+  confirmButtonText: '<a href="../Views/client-site/login.html" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+        </script>
+        <?php
         }
     }
 
@@ -160,15 +184,30 @@ class Consultas
         $result->bindParam(":id", $id);
 
         $result->execute();
+        
 
-        echo '
-                    <script>
-                        alert("Usuario eliminado exitosamente ;)")
-                    </script>';
-
-        echo "<script>
-                        location.href='../Views/Administrador/verUsuarios.php'
-                    </script>";
+        ?>
+            <script>
+                
+                Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+  }
+})
+            </script>
+            <?php
 
     }
 
@@ -215,13 +254,16 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación de usuario actualizada ;)")
-                        </script>';
-
-        echo "<script>
-                            location.href='../Views/Administrador/verUsuarios.php'
-                        </script>";
+        ?>
+        <script>
+            Swal.fire({
+  icon: 'success',
+  title: 'Información actualizada.',
+  text: '',
+  confirmButtonText: '<a href="../Views/Administrador/verUsuarios.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+        </script>
+        <?php
     }
 
     // Usuarios
@@ -243,13 +285,18 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                        alert("Infomación de usuario actualizada ;)")
-                    </script>';
 
-        echo "<script>
-                        location.href='../Views/Usuario/perfilUserNew.php?id=$identificacion'
-                    </script>";
+        ?>
+        <script>
+            Swal.fire({
+  icon: 'success',
+  title: 'Infomación de usuario actualizada.',
+  text: '',
+  confirmButtonText: '<a href="../Views/Usuario/perfilUserNew.php?id='$identificacion'" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+        </script>
+        <?php
+
     }
     public function actualizarFotoUser($id, $foto)
     {
@@ -267,13 +314,16 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación de usuario actualizada ;)")
-                        </script>';
-
-        echo "<script>
-                            location.href='../Views/Usuario/perfilUserNew.php?id=$id'
-                        </script>";
+        ?>
+        <script>
+            Swal.fire({
+  icon: 'success',
+  title: 'Infomación de usuario actualizada .',
+  text: '',
+  confirmButtonText: '<a href="../Views/Usuario/perfilUserNew.php?id='$id'" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+        </script>
+        <?php
     }
     public function modificarCuentaUser($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono)
     {
@@ -295,13 +345,16 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación actualizada ;)")
-                        </script>';
-
-        echo "<script>
-                            location.href='../Views/Usuario/perfilUserNew.php?id=$identificacion'
-                        </script>";
+        ?>
+        <script>
+            Swal.fire({
+  icon: 'success',
+  title: 'Infomación actualizada.',
+  text: '',
+  confirmButtonText: '<a href="../Views/Usuario/perfilUserNew.php?id='$identificacion'" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+        </script>
+        <?php
     }
 
     // Usuarios
@@ -332,13 +385,16 @@ class Consultas
         if ($f) {
             // VALIDAMOS LA CONTRASEÑA
 
-            echo '<script>
-                            alert("El producto ya está registrado ;)")
-                        </script>';
-
-            echo "<script>
-                            location.href='../Views/Administrador/registrarProducto.php'
-                        </script>";
+            ?>
+            <script>
+               Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'El producto ya está registrado!',
+  confirmButtonText: '<a href="../Views/Administrador/registrarProducto.php'" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+            </script>
+            <?php
         } else {
 
             // CREAMOS LA VARIABLE QUE CONTENDRÁ LA CONSULTA A EJECUTAR
@@ -361,13 +417,18 @@ class Consultas
             $result->execute();
 
             // EJECUTAMOS EL INSERT INTO
-            echo '<script>
-                            alert("Registrado exitosamente..")
-                            </script>';
 
-            echo "<script>
-                                location.href='../Views/Administrador/verProductos.php'
-                            </script>";
+            ?>
+        <script>
+            Swal.fire({
+  icon: 'success',
+  title: 'Registrado exitosamente.',
+  text: '',
+  confirmButtonText: '<a href="../Views/Administrador/verProductos.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+        </script>
+        <?php
+           
         }
     }
 
@@ -403,15 +464,19 @@ class Consultas
 
         $result->execute();
 
-        echo '
-                    <script>
-                        alert("Usuario Producto fue eliminado correctamente ;)")
-                    </script>';
+        ?>
+            <script>
+                
+                Swal.fire({
+  icon: 'success',
+  title: 'Eliminado exitosamente.',
+  text: '',
+  confirmButtonText: '<a href="../Views/Administrador/verProductos.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "
-                    <script>
-                        location.href='../Views/Administrador/verProductos.php'
-                    </script>";
+            </script>
+            <?php
+
     }
 
     public function mostrarProducto($id_pro)
@@ -459,13 +524,18 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación del producto actualizada ;)")
-                        </script>';
+        ?>
+            <script>
+                
+                Swal.fire({
+  icon: 'success',
+  title: 'Infomación del producto actualizada.',
+  text: '',
+  confirmButtonText: '<a href="../Views/Administrador/verProductos.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Administrador/verProductos.php'
-                        </script>";
+            </script>
+            <?php
     }
 
     // Productos
@@ -495,13 +565,20 @@ class Consultas
         if ($f) {
             // VALIDAMOS LA CONTRASEÑA
 
-            echo '<script>
-                            alert("El Empleado ya está registrado ;)")
-                        </script>';
+            ?>
+            <script>
+                
+                Swal.fire({
+  icon: 'error',
+  title: 'Opss.',
+  text: 'El Empleado ya está registrado',
+  confirmButtonText: '<a href="../Views/Administrador/verEmpleados.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-            echo "<script>
-                            location.href='../Views/Administrador/verEmpleados.php'
-                        </script>";
+            </script>
+            <?php
+
+            
         } else {
 
 
@@ -532,13 +609,19 @@ class Consultas
             $result->execute();
 
             // EJECUTAMOS EL INSERT INTO
-            echo '<script>
-                        alert("Registrado exitosamente.")
-                        </script>';
 
-            echo "<script>
-                            location.href='../Views/Administrador/verEmpleados.php'
-                        </script>";
+            ?>
+            <script>
+                
+                Swal.fire({
+  icon: 'success',
+  title: 'Registrado exitosamente.',
+  text: '',
+  confirmButtonText: '<a href="../Views/Administrador/verEmpleados.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+
+            </script>
+            <?php
         }
     }
 
@@ -575,13 +658,19 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Usuario eliminado exitosamente ;)")
-                        </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'Usuario eliminado exitosamente.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verEmpleados.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Administrador/verEmpleados.php'
-                        </script>";
+        </script>
+        <?php
+
 
     }
 
@@ -606,13 +695,19 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación del Empleado actualizada ;)")
-                        </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'Infomación del Empleado actualizada.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verEmpleados.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Administrador/verEmpleados.php'
-                        </script>";
+        </script>
+        <?php
+
     }
 
     public function mostrarEmpleado($idEmple)
@@ -664,13 +759,19 @@ class Consultas
         if ($f) {
             // VALIDAMOS LA CONTRASEÑA
 
-            echo '<script>
-                            alert("El producto ya está registrado ;)")
-                        </script>';
+            ?>
+        <script>
+            
+            Swal.fire({
+icon: 'error',
+title: 'El producto ya está registrado.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verMenu.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-            echo "<script>
-                            location.href='../Views/Administrador/verMenu.php'
-                        </script>";
+        </script>
+        <?php
+
         } else {
 
 
@@ -696,13 +797,20 @@ class Consultas
             $result->execute();
 
             // EJECUTAMOS EL INSERT INTO
-            echo '<script>
-                        alert("Registrado exitosamente..")
-                        </script>';
 
-            echo "<script>
-                            location.href='../Views/Administrador/verMenu.php'
-                        </script>";
+            ?>
+            <script>
+                
+                Swal.fire({
+    icon: 'success',
+    title: 'Registrado exitosamente.',
+    text: '',
+    confirmButtonText: '<a href="../Views/Administrador/verMenu.php" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+    
+            </script>
+            <?php
+
         }
     }
 
@@ -732,20 +840,27 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $eliminar = "DELETE FROM menu WHERE id_menu=:id";
+        $eliminar = "DELETE FROM menu WHERE id_menu =:id";
         $result = $conexion->prepare($eliminar);
 
         $result->bindParam(":id", $id);
 
         $result->execute();
 
-        echo '<script>
-                            alert("Plato eliminado exitosamente ;)")
-                        </script>';
 
-        echo "<script>
-                            location.href='../Views/Administrador/verMenu.php'
-                        </script>";
+        ?>
+            <script>
+                
+                Swal.fire({
+    icon: 'success',
+    title: 'Plato eliminado exitosamente .',
+    text: '',
+    confirmButtonText: '<a href="../Views/Administrador/verMenu.php" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+    
+            </script>
+            <?php
+
 
     }
 
@@ -771,18 +886,18 @@ class Consultas
         return $f;
     }
 
-    public function modificarMenu($nombre, $ingredientes, $descripcion, $estado, $precio, $id)
+    public function modificarMenu($nombre, $ingredientes, $descripcion, $estado, $precio, $id_menu )
     {
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
         $actualizar = "UPDATE menu SET nombre=:nombre, ingredientes=:ingredientes, 
-                        descripcion=:descripcion, estado=:estado, precio=:precio WHERE id=:id";
+                        descripcion=:descripcion, estado=:estado, precio=:precio WHERE id_menu =:id_menu ";
 
         $result = $conexion->prepare($actualizar);
 
-        $result->bindParam("id", $id);
+        $result->bindParam("id_menu ", $id_menu );
         $result->bindParam("nombre", $nombre);
         $result->bindParam("ingredientes", $ingredientes);
         $result->bindParam("descripcion", $descripcion);
@@ -793,15 +908,20 @@ class Consultas
 
         $result->execute();
 
-        echo '
-                        <script>
-                            alert("Infomación del producto actualizada ;)")
-                        </script>';
+        
+        ?>
+            <script>
+                
+                Swal.fire({
+    icon: 'success',
+    title: 'Infomación del producto actualizada .',
+    text: '',
+    confirmButtonText: '<a href="../Views/Administrador/verMenu.php" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+    
+            </script>
+            <?php
 
-        echo "
-                        <script>
-                            location.href='../Views/Administrador/verMenu.php'
-                        </script>";
     }
 
     public function mostrarPlatosMenufront()
@@ -828,7 +948,7 @@ class Consultas
 
     // -Sedes
 
-    public function registrarSede($identificacion_admin, $tipo_doc, $nombres, $apellidos, $email, $telefono_sede, $direccion_sede, $estado_sede, $foto_sede)
+    public function registrarSede($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono_sede, $direccion_sede, $estado_sede, $foto_sede)
     {
 
 
@@ -851,20 +971,25 @@ class Consultas
 
         if ($f) {
             // VALIDAMOS LA CONTRASEÑA
+            ?>
+            <script>
+                
+                Swal.fire({
+    icon: 'error',
+    title: 'Opss.',
+    text: 'La sede ya está registrada',
+    confirmButtonText: '<a href="../Views/Administrador/verSedes.php" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+    
+            </script>
+            <?php
 
-            echo '<script>
-                            alert("La sede ya está registrada ;)"
-                        </script>';
-
-            echo "<script>
-                            location.href='../Views/Administrador/verSedes.php'
-                        </script>";
         } else {
 
 
             // CREAMOS LA VARIABLE QUE CONTENDRÁ LA CONSULTA A EJECUTAR
-            $insertar = "INSERT INTO sedes(identificacion_admin, tipo_doc, nombres, apellidos, email, telefono_sede, direccion_sede, estado_sede, foto) VALUES 
-                    (:identificacion_admin, :tipo_doc, :nombres, :apellidos, :email, :telefono_sede, :direccion_sede, :estado_sede, :foto)";
+            $insertar = "INSERT INTO sedes(identificacion, tipo_doc, nombres, apellidos, email, telefono_sede, direccion_sede, estado_sede, foto) VALUES 
+                    (:identificacion, :tipo_doc, :nombres, :apellidos, :email, :telefono_sede, :direccion_sede, :estado_sede, :foto)";
 
 
             // PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCIÓN ANTERIOR
@@ -872,7 +997,7 @@ class Consultas
 
             //  CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
 
-            $result->bindParam(":identificacion_admin", $identificacion_admin);
+            $result->bindParam(":identificacion", $identificacion);
             $result->bindParam(":tipo_doc", $tipo_doc);
             $result->bindParam(":nombres", $nombres);
             $result->bindParam(":apellidos", $apellidos);
@@ -885,13 +1010,19 @@ class Consultas
             $result->execute();
 
             // EJECUTAMOS EL INSERT INTO
-            echo '<script>
-                        alert("Registrado exitosamente..")
-                        </script>';
 
-            echo "<script>
-                            location.href='../Views/Administrador/verSedes.php'
-                        </script>";
+            ?>
+            <script>
+                
+                Swal.fire({
+    icon: 'success',
+    title: 'Registrado exitosamente.',
+    text: '',
+    confirmButtonText: '<a href="../Views/Administrador/verSedes.php" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+    
+            </script>
+            <?php
         }
     }
 
@@ -927,15 +1058,20 @@ class Consultas
 
         $result->execute();
 
-        echo '
-                    <script>
-                        alert("La sede fue eliminada correctamente ;)")
-                    </script>';
 
-        echo "
-                    <script>
-                        location.href='../Views/Administrador/verSedes.php'
-                    </script>";
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'La sede fue eliminada correctamente.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verSedes.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+
+        </script>
+        <?php
+     
     }
 
     public function mostrarSede($id_sede)
@@ -960,13 +1096,13 @@ class Consultas
         return $f;
     }
 
-    public function modificarSede($identificacion_admin, $tipo_doc, $nombres, $apellidos, $email, $telefono_sede, $direccion_sede, $estado_sede, $id_sede)
+    public function modificarSede($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono_sede, $direccion_sede, $estado_sede, $id_sede)
     {
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $actualizar = "UPDATE sedes SET identificacion_admin=:identificacion_admin, tipo_doc=:tipo_doc, nombres=:nombres, 
+        $actualizar = "UPDATE sedes SET identificacion=:identificacion, tipo_doc=:tipo_doc, nombres=:nombres, 
                         apellidos=:apellidos, email=:email, telefono_sede=:telefono_sede, direccion_sede=:direccion_sede, estado_sede=:estado_sede    
                         
                         WHERE id_sede=:id_sede";
@@ -974,7 +1110,7 @@ class Consultas
         $result = $conexion->prepare($actualizar);
 
         $result->bindParam("id_sede", $id_sede);
-        $result->bindParam("identificacion_admin", $identificacion_admin);
+        $result->bindParam("identificacion", $identificacion);
         $result->bindParam("tipo_doc", $tipo_doc);
         $result->bindParam("nombres", $nombres);
         $result->bindParam("apellidos", $apellidos);
@@ -987,13 +1123,19 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación de la sede actualizada ;)")
-                        </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'Infomación de la sede actualizada.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verSedes.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Administrador/verSedes.php'
-                        </script>";
+        </script>
+        <?php
+
     }
 
     // Sedes
@@ -1024,13 +1166,19 @@ class Consultas
         if ($f) {
             // VALIDAMOS LA CONTRASEÑA
 
-            echo '<script>
-                            alert(" N/A ")
-                        </script>';
+            ?>
+        <script>
+            
+            Swal.fire({
+icon: 'error',
+title: 'Opss..',
+text: 'Ya existe en el inventario.',
+confirmButtonText: '<a href="../Views/Administrador/verInventario.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-            echo "<script>
-                            location.href='../Views/Administrador/verInventario.php'
-                        </script>";
+        </script>
+        <?php
+
         } else {
 
 
@@ -1056,13 +1204,19 @@ class Consultas
             $result->execute();
 
             // EJECUTAMOS EL INSERT INTO
-            echo '<script>
-                    alert("Registrado exitosamente..")
-                        </script>';
 
-            echo "<script>
-                        location.href='../Views/Administrador/verInventario.php'
-                    </script>";
+            ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'Registrado exitosamente.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verInventario.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
+
+        </script>
+        <?php
         }
     }
 
@@ -1099,15 +1253,19 @@ class Consultas
 
         $result->execute();
 
-        echo '
-                     <script>
-                        alert("El registro de entrada del inventario fue eliminado correctamente  ;)")
-                    </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'El registro de entrada del inventario fue eliminado correctamente.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verInventario.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "
-                     <script>
-                        location.href='../Views/Administrador/verInventario.php'
-                    </script>";
+        </script>
+        <?php
+
 
     }
 
@@ -1152,13 +1310,18 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("La Información de la entrada en el inventario ha sido actualizada ;)")
-                        </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'La Información de la entrada en el inventario ha sido actualizada.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verInventario.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Administrador/verInventario.php'
-                        </script>";
+        </script>
+        <?php
     }
 
     // Inventario
@@ -1182,13 +1345,19 @@ class Consultas
         if ($f) {
             // VALIDAMOS LA CONTRASEÑA
 
-            echo '<script>
-                            alert("El usuario ya está registrado ;)")
-                        </script>';
+            ?>
+        <script>
+            
+            Swal.fire({
+icon: 'error',
+title: 'Opps..',
+text: 'El usuario ya está registrado.',
+confirmButtonText: '<a href="../Views/Administrador/registrarProveedor.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-            echo "<script>
-                            location.href='../Views/Administrador/registrarProveedor.php'
-                        </script>";
+        </script>
+        <?php
+
         } else {
 
             $insertar = "INSERT INTO proveedores(identificacion, nombres, telefono, direccion, foto) VALUES (:identificacion, :nombres, :telefono, :direccion, :foto)";
@@ -1202,13 +1371,19 @@ class Consultas
             $result->bindParam(":foto", $foto);
             $result->execute();
 
-            echo '<script>
-                        alert("Registrado exitosamente..")
-                        </script>';
+            ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'Registrado exitosamente.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verProveedores.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-            echo "<script>
-                            location.href='../Views/Administrador/verProveedores.php'
-                        </script>";
+        </script>
+        <?php
+
         }
 
     }
@@ -1269,13 +1444,19 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("La Información del Proveedor ha sido actualizada ;)")
-                        </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'La Información del Proveedor ha sido actualizada.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verProveedores.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Administrador/verProveedores.php'
-                        </script>";
+        </script>
+        <?php
+
     }
 
     public function eliminarProveedor($id)
@@ -1290,15 +1471,19 @@ class Consultas
 
         $result->execute();
 
-        echo '
-                     <script>
-                        alert("El Proveedor fue eliminado correctamente  ;)")
-                    </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'El Proveedor fue eliminado correctamente.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/verProveedores.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "
-                     <script>
-                        location.href='../Views/Administrador/verProveedores.php'
-                    </script>";
+        </script>
+        <?php
+        
     }
     // Proveedores
 
@@ -1345,13 +1530,19 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación actualizada ;)")
-                        </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'Infomación actualizada.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/perfil.php?id=$identificacion" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Administrador/perfil.php?id=$identificacion'
-                        </script>";
+        </script>
+        <?php
+
     }
 
     public function actualizarFotoAdmin($id, $foto)
@@ -1370,13 +1561,20 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación de usuario actualizada ;)")
-                        </script>';
+        
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'Infomación actualizada.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/perfil.php?id=$id" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Administrador/perfil.php?id=$id'
-                        </script>";
+        </script>
+        <?php
+
     }
 
     public function actualizarClaveAdmin($identificacion, $claveMd)
@@ -1395,13 +1593,19 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación de usuario actualizada ;)")
-                        </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'Infomación actualizada.',
+text: '',
+confirmButtonText: '<a href="../Views/Administrador/perfil.php?id=$identificacion" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Administrador/perfil.php?id=$identificacion'
-                        </script>";
+        </script>
+        <?php
+
     }
 
     public function actualizarClaveEmpleado($identificacion, $claveMd)
@@ -1420,13 +1624,19 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                            alert("Infomación de usuario actualizada ;)")
-                        </script>';
+        ?>
+        <script>
+            
+            Swal.fire({
+icon: 'success',
+title: 'Infomación actualizada.',
+text: '',
+confirmButtonText: '<a href="../Views/Empleado/datosCuentaEmpleado.php" style="text-decoration: none; color:white;">Aceptar</a>',
+})
 
-        echo "<script>
-                            location.href='../Views/Empleado/datosCuentaEmple.php'
-                        </script>";
+        </script>
+        <?php
+
     }
 
     // Perfil
@@ -1563,32 +1773,44 @@ class ValidarSesion
 
 
                 } else {
-                    echo '<script>
-                        alert("Contactese con el Admin.")
-                    </script>';
 
-                    echo "<script>
-                        location.href='../Views/client-site/login.html'
-                    </script>";
+                    ?>
+            <script>
+                Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Contactese con el Admin.',
+      confirmButtonText: '<a href="../Views/client-site/login.html" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+            </script>
+            <?php
                 }
 
             } else {
-                echo '<script>
-                    alert("El usuario no existe.")
-                </script>';
 
-                echo "<script>
-                    location.href='../Views/client-site/login.html'
-                </script>";
+                ?>
+            <script>
+                Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'El usuario no existe.',
+      confirmButtonText: '<a href="../Views/client-site/login.html" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+            </script>
+            <?php
+        
             }
         } else {
-            echo '<script>
-                    alert("La clave no es correcta")
-                </script>';
-
-            echo "<script>
-                    location.href='../Views/client-site/login.html'
-                </script>";
+            ?>
+            <script>
+                Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'La contraseña es incorrecta.',
+      confirmButtonText: '<a href="../Views/client-site/login.html" style="text-decoration: none; color:white;">Aceptar</a>',
+    })
+            </script>
+            <?php
         }
     }
 
@@ -1599,6 +1821,7 @@ class ValidarSesion
 
         session_start();
         session_destroy();
+        
 
         echo "
                 <script>
@@ -1609,3 +1832,9 @@ class ValidarSesion
 
 }
 ?>
+</body>
+</html>
+
+
+
+
